@@ -1,0 +1,2 @@
+django>=4.2
+allianceauth>=3.7
