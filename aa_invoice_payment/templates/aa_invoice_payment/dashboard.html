@@ -1,0 +1,20 @@
+{% if outstanding %}
+<div class="panel panel-danger">
+  <div class="panel-heading">Outstanding Payments</div>
+  <div class="panel-body">
+    <ul>
+    {% for invoice in outstanding %}
+      <li>{{ invoice.issued }} - {{ invoice.amount }} ISK due {{ invoice.due }}</li>
+    {% endfor %}
+    </ul>
+    <p><strong>Total Due:</strong> {{ total_due }} ISK</p>
+  </div>
+</div>
+{% else %}
+<div class="panel panel-success">
+  <div class="panel-heading">Outstanding Payments</div>
+  <div class="panel-body">
+    <p>No outstanding payments. o7</p>
+  </div>
+</div>
+{% endif %}
